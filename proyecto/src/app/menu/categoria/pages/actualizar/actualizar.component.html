@@ -1,0 +1,19 @@
+<div class="form-container">
+    <h2>Actualizar Categoria</h2>
+    <form (ngSubmit)="actualizarCategoria()" class="create-form">
+      <div class="mb-3">
+        <label for="nombre" class="form-label" >Nombre:</label>
+        <input type="text"  class="form-control" id="nombre" [(ngModel)]="categoria.nombre" name="name" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">descripcion:</label>
+        <input type="text" class="form-control"  id="descripcion" [(ngModel)]="categoria.descripcion" name="precio" required>
+      </div>
+  
+      
+  
+      <button type="submit"  class="save-button">Actualizar Categoria</button>
+      <a [routerLink]="'/categoria'" class="cancel-button"> Regresar</a>
+    </form>
+  </div>

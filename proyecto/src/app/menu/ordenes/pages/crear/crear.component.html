@@ -1,0 +1,35 @@
+<main>
+    <section class="main-header">
+        <h1>Crear Orden</h1>
+    </section>
+    
+    @if(this.status==="error"){
+        <div class="alert alert-danger">
+            <label > No se pudo crear la orden</label>
+        </div>
+    }
+    <form class="create-form" (ngSubmit)="enviarDatosRegistro()" [formGroup]="registerForm" class="">
+
+        <div class="mb-3">
+            <label  class="form-label">idmesa</label>
+            <input type="number" class="form-control" formControlName="idmesa" required>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">platillo ID</label>
+            <input type="text" class="form-control" formControlName="platillo" required>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">platillo cantidad</label>
+            <input type="number" class="form-control" formControlName="cantidad" required>
+        </div>
+ 
+
+        <button type="submit"  class="save-button" [disabled]="registerForm.invalid" >Guardar</button>
+        
+        <a [routerLink]="'/orden'" class="cancel-button"> Regresar</a>
+       
+       
+        
+    </form>
+    
+</main>

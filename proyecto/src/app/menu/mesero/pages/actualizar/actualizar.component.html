@@ -1,0 +1,22 @@
+<div class="form-container">
+    <h2>Actualizar Mesero</h2>
+    <form (ngSubmit)="actualizarMesero()" class="create-form">
+      <div class="mb-3">
+        <label for="nombre" class="form-label" >Nombre:</label>
+        <input type="text"  class="form-control" id="nombre" [(ngModel)]="mesero.nombre" name="name" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="dni" class="form-label">dni:</label>
+        <input type="number" class="form-control"  id="dni" [(ngModel)]="mesero.dni" name="dni" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">telefono:</label>
+        <input type="number" class="form-control"  id="telefono" [(ngModel)]="mesero.telefono" name="telefono" required>
+      </div>
+      
+  
+      <button type="submit"  class="save-button">Actualizar Mesero</button>
+      <a [routerLink]="'/mesero'" class="cancel-button"> Regresar</a>
+    </form>
+  </div>

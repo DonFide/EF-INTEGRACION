@@ -1,0 +1,27 @@
+<div class="form-container">
+    <h2>Actualizar Cliente</h2>
+    <form (ngSubmit)="actualizarCliente()" class="create-form">
+      <div class="mb-3">
+        <label for="nombre" class="form-label" >Nombre:</label>
+        <input type="text"  class="form-control" id="nombre" [(ngModel)]="cliente.nombre" name="name" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="dni" class="form-label">dni:</label>
+        <input type="number" class="form-control"  id="dni" [(ngModel)]="cliente.dni" name="dni" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">telefono:</label>
+        <input type="number" class="form-control"  id="telefono" [(ngModel)]="cliente.telefono" name="telefono" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="correo" class="form-label" >correo:</label>
+        <input type="text"  class="form-control" id="correo" [(ngModel)]="cliente.correo" name="correo" required>
+      </div>
+   
+  
+      <button type="submit"  class="save-button">Actualizar Cliente</button>
+      <a [routerLink]="'/cliente'" class="cancel-button"> Regresar</a>
+    </form>
+  </div>

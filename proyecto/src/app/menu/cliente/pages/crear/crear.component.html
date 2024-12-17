@@ -1,0 +1,38 @@
+<main>
+    <section class="main-header">
+        <h1>Crear Cliente</h1>
+    </section>
+    
+    @if(this.status==="error"){
+        <div class="alert alert-danger">
+            <label > No se pudo crear el cliente</label>
+        </div>
+    }
+    <form class="create-form" (ngSubmit)="enviarDatosRegistro()" [formGroup]="registerForm" class="">
+
+        <div class="mb-3">
+            <label  class="form-label">nombre</label>
+            <input type="text" class="form-control" formControlName="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">dni</label>
+            <input type="number" class="form-control" formControlName="dni" required>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">telefono</label>
+            <input type="number" class="form-control" formControlName="telefono" required>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">correo</label>
+            <input type="text" class="form-control" formControlName="correo" required>
+        </div>
+        
+        <button type="submit"  class="save-button" [disabled]="registerForm.invalid" >Guardar</button>
+        
+        <a [routerLink]="'/cliente'" class="cancel-button"> Regresar</a>
+       
+       
+        
+    </form>
+    
+</main>

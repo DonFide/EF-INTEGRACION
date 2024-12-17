@@ -1,0 +1,33 @@
+
+<main>
+    <section class="main-header">
+        <h1>Platillo</h1>
+    </section>
+    @if(this.status==="error"){
+        <div class="alert alert-danger">
+            <label > No se pudo encontrar el platillo</label>
+            
+        </div>
+        <a [routerLink]="'/platillo'" class="cancel-button"> Regresar</a>
+    }
+    
+ @if(this.platillo){
+    <form class="create-form" id="form-actualizar">
+        
+        <div class="form-group">
+            <label for="name">Nombre del platillo: {{this.platillo.nombre}}</label> 
+        </div>
+        <div class="form-group">
+            <label for="ingredients">Ingredientes: {{this.platillo.ingredientes}}</label>
+            
+        </div>
+        <div class="form-group">
+            <label for="price">Precio: {{this.platillo.precio}}</label>
+            
+        </div>
+         
+        <a [routerLink]="'/platillo'" class="cancel-button"> Regresar</a>
+    </form>
+ }
+   
+</main>

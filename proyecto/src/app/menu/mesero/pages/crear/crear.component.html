@@ -1,0 +1,39 @@
+<main>
+    <section class="main-header">
+        <h1>Crear Mesero</h1>
+    </section>
+    
+    @if(this.status==="error"){
+        <div class="alert alert-danger">
+            <label > No se pudo crear al mesero</label>
+        </div>
+    }
+    <form class="create-form" (ngSubmit)="enviarDatosRegistro()" [formGroup]="registerForm" class="">
+
+        <div class="mb-3">
+            <label  class="form-label">nombre</label>
+            <input type="text" class="form-control" formControlName="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">dni</label>
+            <input type="text" class="form-control" formControlName="dni" required>
+        </div>
+     
+        <div class="mb-3">
+            <label  class="form-label">telefono</label>
+            <input type="number" class="form-control" formControlName="telefono" required>
+        </div>
+
+        <div class="mb-3">
+            <label  class="form-label">password</label>
+            <input type="password" class="form-control" formControlName="password" required>
+        </div>
+        <button type="submit"  class="save-button" [disabled]="registerForm.invalid" >Guardar</button>
+        
+        <a [routerLink]="'/mesero'" class="cancel-button"> Regresar</a>
+       
+       
+        
+    </form>
+    
+</main>

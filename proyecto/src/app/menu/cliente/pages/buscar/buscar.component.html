@@ -1,0 +1,37 @@
+
+<main>
+    <section class="main-header">
+        <h1>Cliente</h1>
+    </section>
+    @if(this.status==="error"){
+        <div class="alert alert-danger">
+            <label > No se pudo encontrar el cliente</label>
+            
+        </div>
+        <a [routerLink]="'/cliente'" class="cancel-button"> Regresar</a>
+    }
+    
+ @if(this.cliente){
+    <form class="create-form" id="form-actualizar">
+        
+        <div class="form-group">
+            <label for="name">Nombre del platillo: {{this.cliente.nombre}}</label> 
+        </div>
+        <div class="form-group">
+            <label for="dni">dni: {{this.cliente.dni}}</label>
+            
+        </div>
+        <div class="form-group">
+            <label for="telefono">telefono: {{this.cliente.telefono}}</label>
+            
+        </div>
+        <div class="form-group">
+            <label for="correo">correo: {{this.cliente.correo}}</label>
+            
+        </div>
+         
+        <a [routerLink]="'/cliente'" class="cancel-button"> Regresar</a>
+    </form>
+ }
+   
+</main>

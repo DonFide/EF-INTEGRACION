@@ -1,0 +1,55 @@
+ 
+
+  <main>
+
+    <section class="main-header">
+        <h1>Gestión de Categoria</h1>
+        <div class="header-content"> 
+                
+               <a [routerLink]="['/categoria/crear']" class="create"> Crear Categoria</a>
+        </div>
+
+    </section>
+
+    <div class="table-container">
+        <table id="listado-platillos" class="list">
+            <thead class="table-head">
+                <th>ID</th>
+                <th>nombre</th>
+                <th>descripcion</th> 
+                <th>estado</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody class="table-row" id="platillo-tbody">
+                @for(categoria of categorias;track categorias.nombre){
+                <tr>
+                   
+                        <td  > <span>{{ categoria._id }}</span> </td>
+                        <td  > <span>{{ categoria.nombre }}</span> </td>
+                        <td  > <span>{{ categoria.descripcion }}</span> </td> 
+                        <td> <span>{{ categoria.estado === true? "Disponible" : "No disponible" }}</span> </td>
+                        <td> 
+                             <button class="edit-row" (click)="actualizarCategoria(categoria._id)">
+                            <svg fill="white" width="20" height="20" viewBox="0 0 24 24"> 
+                                <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+                            </svg>
+                            </button>
+                            <button class="delete-row" (click)="eliminarCategoria(categoria._id)">
+                                <svg fill="white" width="20" height="20"viewBox="0 0 24 24">
+                                    <path d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H16V19H8V9M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+                                </svg>
+                            </button>
+                        </td>
+                    
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<div id="alert-container" class="alert-container">
+    <div class="alerts">
+        <p id="alert-mensaje"></p>
+    </div>
+</div>

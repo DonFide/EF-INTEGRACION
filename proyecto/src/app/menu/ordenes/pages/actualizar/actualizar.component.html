@@ -1,0 +1,18 @@
+<div class="form-container">
+    <h2>Actualizar Orden</h2>
+    <form (ngSubmit)="actualizarOrden()" class="create-form">
+      <div class="mb-3">
+        <label for="idMesa" class="form-label" >Id mesa:</label>
+        <input type="number"  class="form-control" id="idMesa" [(ngModel)]="orden.idmesa" name="idMesa" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="orden" class="form-label">Precio:</label>
+        <input type="string" class="form-control"  id="orden" [(ngModel)]="orden.estado" name="orden" required>
+      </div>
+  
+      
+      <button type="submit"  class="save-button">Actualizar Orden</button>
+      <a [routerLink]="'/orden'" class="cancel-button"> Regresar</a>
+    </form>
+  </div>

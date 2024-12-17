@@ -1,0 +1,31 @@
+<main>
+    <section class="main-header">
+        <h1>Crear Categoria</h1>
+    </section>
+    
+    @if(this.status==="error"){
+        <div class="alert alert-danger">
+            <label > No se pudo crear la categoria</label>
+        </div>
+    }
+    <form class="create-form" (ngSubmit)="enviarDatosRegistro()" [formGroup]="registerForm" class="">
+
+        <div class="mb-3">
+            <label  class="form-label">nombre</label>
+            <input type="text" class="form-control" formControlName="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">descripcion</label>
+            <input type="text" class="form-control" formControlName="descripcion" required>
+        </div>
+     
+        
+        <button type="submit"  class="save-button" [disabled]="registerForm.invalid" >Guardar</button>
+        
+        <a [routerLink]="'/categoria'" class="cancel-button"> Regresar</a>
+       
+       
+        
+    </form>
+    
+</main>

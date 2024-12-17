@@ -1,0 +1,33 @@
+
+<main>
+    <section class="main-header">
+        <h1>Orden</h1>
+    </section>
+    @if(this.status==="error"){
+        <div class="alert alert-danger">
+            <label > No se pudo encontrar la orden</label>
+            
+        </div>
+        <a [routerLink]="'/orden'" class="cancel-button"> Regresar</a>
+    }
+    
+ @if(this.orden){
+    <form class="create-form" id="form-actualizar">
+        
+        <div class="form-group">
+            <label for="idMesa">Id Mesa: {{this.orden.idmesa}}</label> 
+        </div>
+        <div class="form-group">
+            <label for="platillo">Ingredientes: {{this.orden.platillos.platillo}}</label>
+            
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado: {{this.orden.estado}}</label>
+            
+        </div>
+         
+        <a [routerLink]="'/orden'" class="cancel-button"> Regresar</a>
+    </form>
+ }
+   
+</main>
